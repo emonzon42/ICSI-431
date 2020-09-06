@@ -22,6 +22,21 @@ def set_intersect(S, T):
     return {x for x in S if(set(T).__contains__(x))}
 
 #4 Tuples   
+def three_tuples(S):
+    return [(i,j,k) for i in S for j in S for k in S if (i+j+k == 0)]
+
+#5 Dictionaries
+
+
+#6 Filereading
+def file_line_count(filename):
+    f = open(filename, 'r')
+    i = 0
+    if(f.readable):
+        for x in f.readlines():
+            i+=1
+    f.close()
+    return i
 
 
 
@@ -29,3 +44,6 @@ if __name__ == '__main__':
     test_print()
     list_set_length()
     print(set_intersect( {1,2,3,3}, {3,4,5,6}))
+    print(three_tuples({-4,-2, 1, 2, 5, 0}))
+    print(file_line_count('Homework/HW0/stories.txt'))
+    
